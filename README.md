@@ -5,7 +5,7 @@ The project is a program for generating a line or circle based on specific algor
 ### &nbsp;&nbsp;&nbsp;Bressenham  
 ## Circle Generation Algorithm:  
 ### &nbsp;&nbsp;&nbsp;Modular  
-### &nbsp;&nbsp;&nbsp;;Midpoint  
+### &nbsp;&nbsp;&nbsp;Midpoint  
   
   
 ## Contributors:  
