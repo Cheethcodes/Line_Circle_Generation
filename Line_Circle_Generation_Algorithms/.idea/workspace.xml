@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3426d333-b7b8-4566-870f-1f0093e08fff" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainApp.py" afterDir="false" />
-    </list>
+    <list default="true" id="3426d333-b7b8-4566-870f-1f0093e08fff" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,14 +12,14 @@
     <session id="-1778417559">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.25" value="1" />
-          <entry key="project.open.time.3" value="3" />
+          <entry key="project.open.time.3" value="4" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -52,15 +49,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MainApp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="1234" column="27" lean-forward="true" selection-start-line="1234" selection-start-column="27" selection-end-line="1234" selection-end-column="27" />
+            <state relative-caret-position="170">
+              <caret line="1237" selection-start-line="1237" selection-end-line="1237" />
               <folding>
                 <element signature="e#499#577#0" />
                 <element signature="e#627#2860#0" />
-                <element signature="e#2888#3827#0" />
-                <element signature="e#3971#5128#0" />
-                <marker date="1555687996673" expanded="true" signature="622:3019" ph="..." />
-                <marker date="1555687996673" expanded="true" signature="2929:3019" ph="..." />
               </folding>
             </state>
           </provider>
@@ -222,7 +215,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32885906" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32885906" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -240,15 +233,11 @@
     <entry file="file://$PROJECT_DIR$/MidPoint.py" />
     <entry file="file://$PROJECT_DIR$/MainApp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="1234" column="27" lean-forward="true" selection-start-line="1234" selection-start-column="27" selection-end-line="1234" selection-end-column="27" />
+        <state relative-caret-position="170">
+          <caret line="1237" selection-start-line="1237" selection-end-line="1237" />
           <folding>
             <element signature="e#499#577#0" />
             <element signature="e#627#2860#0" />
-            <element signature="e#2888#3827#0" />
-            <element signature="e#3971#5128#0" />
-            <marker date="1555687996673" expanded="true" signature="622:3019" ph="..." />
-            <marker date="1555687996673" expanded="true" signature="2929:3019" ph="..." />
           </folding>
         </state>
       </provider>
