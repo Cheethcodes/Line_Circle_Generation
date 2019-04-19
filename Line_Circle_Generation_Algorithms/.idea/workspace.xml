@@ -15,37 +15,58 @@
     <session id="-1778417559">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.25" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.3" value="3" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="9" />
+          <entry key="py" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="9" />
+          <entry key="Python" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="3230" />
+          <entry key="py" value="5262" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="3230" />
+          <entry key="Python" value="5262" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MainApp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="1234" column="27" lean-forward="true" selection-start-line="1234" selection-start-column="27" selection-end-line="1234" selection-end-column="27" />
+              <folding>
+                <element signature="e#499#577#0" />
+                <element signature="e#627#2860#0" />
+                <element signature="e#2888#3827#0" />
+                <element signature="e#3971#5128#0" />
+                <marker date="1555687996673" expanded="true" signature="622:3019" ph="..." />
+                <marker date="1555687996673" expanded="true" signature="2929:3019" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -90,6 +111,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -101,7 +123,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -219,16 +240,15 @@
     <entry file="file://$PROJECT_DIR$/MidPoint.py" />
     <entry file="file://$PROJECT_DIR$/MainApp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="63" selection-start-line="6" selection-start-column="63" selection-end-line="6" selection-end-column="63" />
+        <state relative-caret-position="119">
+          <caret line="1234" column="27" lean-forward="true" selection-start-line="1234" selection-start-column="27" selection-end-line="1234" selection-end-column="27" />
           <folding>
-            <element signature="e#240#318#0" />
-            <element signature="e#631#1534#0" />
-            <element signature="e#1678#4417#0" />
-            <element signature="e#4715#20034#0" />
-            <element signature="e#19709#28469#0" />
-            <element signature="e#28616#44663#0" />
-            <element signature="e#44811#55817#0" />
+            <element signature="e#499#577#0" />
+            <element signature="e#627#2860#0" />
+            <element signature="e#2888#3827#0" />
+            <element signature="e#3971#5128#0" />
+            <marker date="1555687996673" expanded="true" signature="622:3019" ph="..." />
+            <marker date="1555687996673" expanded="true" signature="2929:3019" ph="..." />
           </folding>
         </state>
       </provider>

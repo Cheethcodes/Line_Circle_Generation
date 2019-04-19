@@ -10,6 +10,8 @@ import tkinter as tk
 from tkinter import font as tkfont
 from tkinter import ttk
 
+TEXT_about = "Project created by Lyle Steven R. Biscocho and Gabriel Hansley C. Suarez in partial fulfillment of CS 208-GRAPHICS AND VISUAL COMPUTING"
+
 def getNumber(x):
     y = x.get()
     if (y == ""):
@@ -17,13 +19,65 @@ def getNumber(x):
     else:
         return int(y)
 
+def Layout(target, controller, TEXT_title):
+    tk.ttk.Separator(target, orient="vertical").grid(column=1, row=0, rowspan=900, sticky='ns')
+
+    label = tk.Label(target, text=TEXT_title, font=controller.title_font)
+    label.grid(row=0, column=2, pady=10, padx=10, columnspan=20, sticky="w")
+
+    label_subtitle_1 = tk.Label(target, text="--------Main Page--------", font=("Times New Roman", 18))
+    label_subtitle_1.grid(row=3, column=0, pady=5, rowspan=2)
+
+    button1 = tk.Button(target, text="Main Page", command=lambda: controller.show_frame("StartUp"), width=19, height=2)
+    button1.grid(row=5, column=0, padx=5, pady=5, rowspan=2)
+
+    label_subtitle_2 = tk.Label(target, text="-----Line Generation-----", font=("Times New Roman", 18))
+    label_subtitle_2.grid(row=7, column=0, pady=20, rowspan=2)
+
+    button2 = tk.Button(target, text="Bressenham Algorithm", command=lambda: controller.show_frame("Bressenham"), width=19, height=2)
+    button2.grid(row=9, column=0, pady=5, rowspan=2)
+
+    button3 = tk.Button(target, text="DDA Algorithm", command=lambda: controller.show_frame("DDA"), width=19, height=2)
+    button3.grid(row=11, column=0, pady=5, rowspan=2)
+
+    label_subtitle_3 = tk.Label(target, text="----Circle Generation----", font=("Times New Roman", 18))
+    label_subtitle_3.grid(row=13, column=0, pady=20, rowspan=2)
+
+    button4 = tk.Button(target, text="Midpoint Algorithm", command=lambda: controller.show_frame("Midpoint"), width=19, height=2)
+    button4.grid(row=15, column=0, pady=5, rowspan=2)
+
+    button5 = tk.Button(target, text="Modular Algorithm", command=lambda: controller.show_frame("Modular"), width=19, height=2)
+    button5.grid(row=17, column=0, pady=5, rowspan=2)
+
+    label_subtitle_4 = tk.Label(target, text="-----------About-----------", font=("Times New Roman", 18))
+    label_subtitle_4.grid(row=19, column=0, pady=20, rowspan=2)
+
+    label_subtitle_4_body = tk.Label(target, text=TEXT_about, wraplength=220)
+    label_subtitle_4_body.grid(row=21, column=0, pady=5)
+
+    label_footer = tk.Label(target, text="              ", font=("Helvetica", 18))
+    label_footer.grid(row=22, column=2, pady=5)
+
+    label_footer2 = tk.Label(target, text="              ", font=("Helvetica", 18))
+    label_footer2.grid(row=23, column=2, pady=5)
+
+def showPlot(listX, listY, target, canvas_row, canvas_column):
+    f = Figure(figsize=(5, 5), dpi=100)
+    a = f.add_subplot(111)
+    a.scatter(listX, listY)
+
+    canvas = FigureCanvasTkAgg(f, target)
+    canvas.draw()
+    canvas.get_tk_widget().grid(row=canvas_row, column=canvas_column, rowspan=100, columnspan=100, sticky="nw")
+
 class MainApp(tk.Tk):
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
         self.geometry("1090x710")
         self.title("CS 208 Project")
-        self.resizable(False, False)
         self.title_font = tkfont.Font(family='Helvetica', size=18, weight="bold", slant="italic")
+        self.iconbitmap('logo.ico')
+        self.resizable(False, False)
 
         container = tk.Frame(self)
         container.pack(side="top", fill="both", expand=True)
@@ -50,52 +104,10 @@ class StartUp(tk.Frame):
         tk.Frame.__init__(self, parent)
         self.controller = controller
 
-        tk.ttk.Separator(self, orient="vertical").grid(column=1, row=0, rowspan=900, sticky='ns')
+        Layout(self, controller, "CS 208 PROJECT - Home")
 
-        label = tk.Label(self, text="CS 208 PROJECT - Home", font=controller.title_font)
-        label.grid(row=0, column=2, pady=10, padx=10, columnspan=20, sticky="w")
-
-        label_subtitle_1 = tk.Label(self, text="--------Main Page--------", font=("Times New Roman", 18))
-        label_subtitle_1.grid(row=3, column=0, pady=5, rowspan=2)
-
-        button1 = tk.Button(self, text="Main Page", command=lambda: controller.show_frame("StartUp"), width=19,
-                            height=2)
-        button1.grid(row=5, column=0, padx=5, pady=5, rowspan=2)
-
-        label_subtitle_2 = tk.Label(self, text="-----Line Generation-----", font=("Times New Roman", 18))
-        label_subtitle_2.grid(row=7, column=0, pady=20, rowspan=2)
-
-        button2 = tk.Button(self, text="Bressenham Algorithm", command=lambda: controller.show_frame("Bressenham"), width=19, height=2)
-        button2.grid(row=9, column=0, pady=5, rowspan=2)
-
-        button3 = tk.Button(self, text="DDA Algorithm", command=lambda: controller.show_frame("DDA"), width=19,
-                            height=2)
-        button3.grid(row=11, column=0, pady=5, rowspan=2)
-
-        label_subtitle_3 = tk.Label(self, text="----Circle Generation----", font=("Times New Roman", 18))
-        label_subtitle_3.grid(row=13, column=0, pady=20, rowspan=2)
-
-        button4 = tk.Button(self, text="Midpoint Algorithm", command=lambda: controller.show_frame("Midpoint"),
-                            width=19, height=2)
-        button4.grid(row=15, column=0, pady=5, rowspan=2)
-
-        button5 = tk.Button(self, text="Modular Algorithm", command=lambda: controller.show_frame("Modular"), width=19,
-                            height=2)
-        button5.grid(row=17, column=0, pady=5, rowspan=2)
-
-        label_subtitle_4 = tk.Label(self, text="-----------About-----------", font=("Times New Roman", 18))
-        label_subtitle_4.grid(row=19, column=0, pady=20, rowspan=2)
-
-        label_subtitle_4_body = tk.Label(self,
-                                         text="Project created by Lyle Steven R. Biscocho and Gabriel Hansley C. Suarez in partial fulfillment of CS 208",
-                                         wraplength=220)
-        label_subtitle_4_body.grid(row=21, column=0, pady=5)
-
-        label_footer = tk.Label(self, text="              ", font=("Helvetica", 18))
-        label_footer.grid(row=22, column=2, pady=5)
-
-        label_footer2 = tk.Label(self, text="              ", font=("Helvetica", 18))
-        label_footer2.grid(row=23, column=2, pady=5)
+        label_texes = tk.Label(self, text="\nIncluded in the standalone project are:\n   1. Line generating algorithm\n          a. DDA\n          b. Bressenham\n   2. Circle generating algorithm\n          a. Midpoint\n          b. Modular.\n\nFunctions include\n   1. enumeration of coordinates, values and lists that will be generated from the given\n        coordinates and/or radius\n   2. Graph (scatterplot) of the figure generated.\n\nDependencies used are as follows:\n   1. Python 3.7 as the interpreter;\n   2. Virtual Environment as the environment; and\n   3. Python modules are listed in Readme\n\nLimitations are as follows:\n   1. Input values are limited to integers;\n   2. Generated graph is of type scatter plot and cannot be zoomed; and\n   3. The program is written in Python both back and front ends.", font=('Times New Roman', 13), wraplength=610, justify="left")
+        label_texes.grid(row=3, column=2, rowspan=100, columnspan=100, sticky="nw", padx=20)
 
 ###############################################################################################################
 
@@ -104,52 +116,7 @@ class Bressenham(tk.Frame):
         tk.Frame.__init__(self, parent)
         self.controller = controller
 
-        tk.ttk.Separator(self, orient="vertical").grid(column=1, row=0, rowspan=900, sticky='ns')
-
-        label = tk.Label(self, text="CS 208 PROJECT - Bressenham Line Generation", font=controller.title_font)
-        label.grid(row=0, column=2, pady=10, ipadx=10, columnspan=20, sticky="w")
-
-        label_subtitle_1 = tk.Label(self, text="--------Main Page--------", font=("Times New Roman", 18))
-        label_subtitle_1.grid(row=3, column=0, pady=5, rowspan=2)
-
-        button1 = tk.Button(self, text="Main Page", command=lambda: controller.show_frame("StartUp"), width=19,
-                            height=2)
-        button1.grid(row=5, column=0, padx=5, pady=5, rowspan=2)
-
-        label_subtitle_2 = tk.Label(self, text="-----Line Generation-----", font=("Times New Roman", 18))
-        label_subtitle_2.grid(row=7, column=0, pady=20, rowspan=2)
-
-        button2 = tk.Button(self, text="Bressenham Algorithm", width=19, height=2)
-        button2.grid(row=9, column=0, pady=5, rowspan=2)
-
-        button3 = tk.Button(self, text="DDA Algorithm", command=lambda: controller.show_frame("DDA"), width=19,
-                            height=2)
-        button3.grid(row=11, column=0, pady=5, rowspan=2)
-
-        label_subtitle_3 = tk.Label(self, text="----Circle Generation----", font=("Times New Roman", 18))
-        label_subtitle_3.grid(row=13, column=0, pady=20, rowspan=2)
-
-        button4 = tk.Button(self, text="Midpoint Algorithm", command=lambda: controller.show_frame("Midpoint"),
-                            width=19, height=2)
-        button4.grid(row=15, column=0, pady=5, rowspan=2)
-
-        button5 = tk.Button(self, text="Modular Algorithm", command=lambda: controller.show_frame("Modular"), width=19,
-                            height=2)
-        button5.grid(row=17, column=0, pady=5, rowspan=2)
-
-        label_subtitle_4 = tk.Label(self, text="-----------About-----------", font=("Times New Roman", 18))
-        label_subtitle_4.grid(row=19, column=0, pady=20, rowspan=2)
-
-        label_subtitle_4_body = tk.Label(self,
-                                         text="Project created by Lyle Steven R. Biscocho and Gabriel Hansley C. Suarez in partial fulfillment of CS 208",
-                                         wraplength=220)
-        label_subtitle_4_body.grid(row=21, column=0, pady=5)
-
-        label_footer = tk.Label(self, text="              ", font=("Helvetica", 18))
-        label_footer.grid(row=22, column=2, pady=5)
-
-        label_footer2 = tk.Label(self, text="              ", font=("Helvetica", 18))
-        label_footer2.grid(row=23, column=2, pady=5)
+        Layout(self, controller, "CS 208 PROJECT - Bressenham Line Generation")
 
         label_coordinate1_bressenham = tk.Label(self, text="Coord 1 >")
         label_coordinate2_bressenham = tk.Label(self, text="Coord 2 >")
@@ -505,13 +472,7 @@ class Bressenham(tk.Frame):
                 scroll.pack(side=RIGHT, fill=Y)
                 scroll.config(command=listbox.yview)
 
-                f = Figure(figsize=(5, 5), dpi=100)
-                a = f.add_subplot(111)
-                a.scatter(listX, listY)
-
-                canvas = FigureCanvasTkAgg(f, self)
-                canvas.draw()
-                canvas.get_tk_widget().grid(row=8, column=5, rowspan=100, columnspan=100, sticky="nw")
+                showPlot(listX, listY, self, 8, 5)
 
         label_blankbtn = tk.Label(self, text=" ")
         btnCalc_bressenham = tk.Button(self, text="Calculate", width=15, font=("Helvetica", 20, "bold"), command=execBressenham)
@@ -533,51 +494,7 @@ class DDA(tk.Frame):
         tk.Frame.__init__(self, parent)
         self.controller = controller
 
-        tk.ttk.Separator(self, orient="vertical").grid(column=1, row=0, rowspan=900, sticky='ns')
-
-        label = tk.Label(self, text="CS 208 PROJECT - DDA Line Generation", font=controller.title_font)
-        label.grid(row=0, column=2, pady=10, ipadx=10, columnspan=20, sticky="w")
-
-        label_subtitle_1 = tk.Label(self, text="--------Main Page--------", font=("Times New Roman", 18))
-        label_subtitle_1.grid(row=3, column=0, pady=5, rowspan=2)
-
-        button1 = tk.Button(self, text="Main Page", command=lambda: controller.show_frame("StartUp"), width=19,
-                            height=2)
-        button1.grid(row=5, column=0, padx=5, pady=5, rowspan=2)
-
-        label_subtitle_2 = tk.Label(self, text="-----Line Generation-----", font=("Times New Roman", 18))
-        label_subtitle_2.grid(row=7, column=0, pady=20, rowspan=2)
-
-        button2 = tk.Button(self, text="Bressenham Algorithm", command=lambda: controller.show_frame("Bressenham"), width=19, height=2)
-        button2.grid(row=9, column=0, pady=5, rowspan=2)
-
-        button3 = tk.Button(self, text="DDA Algorithm", width=19, height=2)
-        button3.grid(row=11, column=0, pady=5, rowspan=2)
-
-        label_subtitle_3 = tk.Label(self, text="----Circle Generation----", font=("Times New Roman", 18))
-        label_subtitle_3.grid(row=13, column=0, pady=20, rowspan=2)
-
-        button4 = tk.Button(self, text="Midpoint Algorithm", command=lambda: controller.show_frame("Midpoint"),
-                            width=19, height=2)
-        button4.grid(row=15, column=0, pady=5, rowspan=2)
-
-        button5 = tk.Button(self, text="Modular Algorithm", command=lambda: controller.show_frame("Modular"), width=19,
-                            height=2)
-        button5.grid(row=17, column=0, pady=5, rowspan=2)
-
-        label_subtitle_4 = tk.Label(self, text="-----------About-----------", font=("Times New Roman", 18))
-        label_subtitle_4.grid(row=19, column=0, pady=20, rowspan=2)
-
-        label_subtitle_4_body = tk.Label(self,
-                                         text="Project created by Lyle Steven R. Biscocho and Gabriel Hansley C. Suarez in partial fulfillment of CS 208",
-                                         wraplength=220)
-        label_subtitle_4_body.grid(row=21, column=0, pady=5)
-
-        label_footer = tk.Label(self, text="              ", font=("Helvetica", 18))
-        label_footer.grid(row=22, column=2, pady=5)
-
-        label_footer2 = tk.Label(self, text="              ", font=("Helvetica", 18))
-        label_footer2.grid(row=23, column=2, pady=5)
+        Layout(self, controller, "CS 208 PROJECT - DDA Line Generation")
 
         label_coordinate1_DDA = tk.Label(self, text="Coord 1 >")
         label_coordinate2_DDA = tk.Label(self, text="Coord 2 >")
@@ -745,13 +662,7 @@ class DDA(tk.Frame):
                 scroll.pack(side=RIGHT, fill=Y)
                 scroll.config(command=listbox.yview)
 
-                f = Figure(figsize=(5, 5), dpi=100)
-                a = f.add_subplot(111)
-                a.scatter(listX, listY)
-
-                canvas = FigureCanvasTkAgg(f, self)
-                canvas.draw()
-                canvas.get_tk_widget().grid(row=8, column=5, rowspan=100, columnspan=100, sticky="nw")
+                showPlot(listX, listY, self, 8, 5)
 
         label_blankbtn = tk.Label(self, text=" ")
         btnCalc_DDA = tk.Button(self, text="Calculate", width=15, font=("Helvetica", 20, "bold"), command=execDDA)
@@ -774,51 +685,7 @@ class Modular(tk.Frame):
         tk.Frame.__init__(self, parent)
         self.controller=controller
 
-        tk.ttk.Separator(self, orient="vertical").grid(column=1, row=0, rowspan=900, sticky='ns')
-
-        label = tk.Label(self, text="CS 208 PROJECT - Modular Circle Generation", font=controller.title_font)
-        label.grid(row=0, column=2, pady=10, padx=10, columnspan=20, sticky="w")
-
-        label_subtitle_1 = tk.Label(self, text="--------Main Page--------", font=("Times New Roman", 18))
-        label_subtitle_1.grid(row=3, column=0, pady=5, rowspan=2)
-
-        button1 = tk.Button(self, text="Main Page", command=lambda: controller.show_frame("StartUp"), width=19,
-                            height=2)
-        button1.grid(row=5, column=0, padx=5, pady=5, rowspan=2)
-
-        label_subtitle_2 = tk.Label(self, text="-----Line Generation-----", font=("Times New Roman", 18))
-        label_subtitle_2.grid(row=7, column=0, pady=20, rowspan=2)
-
-        button2 = tk.Button(self, text="Bressenham Algorithm", command=lambda: controller.show_frame("Bressenham"), width=19, height=2)
-        button2.grid(row=9, column=0, pady=5, rowspan=2)
-
-        button3 = tk.Button(self, text="DDA Algorithm", command=lambda: controller.show_frame("DDA"), width=19,
-                            height=2)
-        button3.grid(row=11, column=0, pady=5, rowspan=2)
-
-        label_subtitle_3 = tk.Label(self, text="----Circle Generation----", font=("Times New Roman", 18))
-        label_subtitle_3.grid(row=13, column=0, pady=20, rowspan=2)
-
-        button4 = tk.Button(self, text="Midpoint Algorithm", command=lambda: controller.show_frame("Midpoint"),
-                            width=19, height=2)
-        button4.grid(row=15, column=0, pady=5, rowspan=2)
-
-        button5 = tk.Button(self, text="Modular Algorithm", width=19, height=2)
-        button5.grid(row=17, column=0, pady=5, rowspan=2)
-
-        label_subtitle_4 = tk.Label(self, text="-----------About-----------", font=("Times New Roman", 18))
-        label_subtitle_4.grid(row=19, column=0, pady=20, rowspan=2)
-
-        label_subtitle_4_body = tk.Label(self,
-                                         text="Project created by Lyle Steven R. Biscocho and Gabriel Hansley C. Suarez in partial fulfillment of CS 208",
-                                         wraplength=220)
-        label_subtitle_4_body.grid(row=21, column=0, pady=5)
-
-        label_footer = tk.Label(self, text="              ", font=("Helvetica", 18))
-        label_footer.grid(row=22, column=2, pady=5)
-
-        label_footer2 = tk.Label(self, text="              ", font=("Helvetica", 18))
-        label_footer2.grid(row=23, column=2, pady=5)
+        Layout(self, controller, "CS 208 PROJECT - Modular Circle Generation")
 
         label_coordinates_Modular = tk.Label(self, text="Center >")
         label_Pointa_Modular = tk.Label(self, text=" X ")
@@ -1063,15 +930,6 @@ class Modular(tk.Frame):
                 scroll1.pack(side=RIGHT, fill=Y)
                 scroll1.config(command=listbox_points.yview)
 
-            def scatterPlot():
-                f = Figure(figsize=(5, 5), dpi=100)
-                a = f.add_subplot(111)
-                a.scatter(finalXValues, finalYValues)
-
-                canvas = FigureCanvasTkAgg(f, self)
-                canvas.draw()
-                canvas.get_tk_widget().grid(row=8, column=5, rowspan=100, columnspan=100, sticky="nw")
-
             def main():
                 cont = True
                 iterCnt = 0
@@ -1121,10 +979,9 @@ class Modular(tk.Frame):
             main()
             shiftValues()
             getPoints()
-
             displayPoints()
             displayResult()
-            scatterPlot()
+            showPlot(finalXValues, finalYValues, self, 8, 5)
 
         buttonCalc_Modular = tk.Button(self, text="Calculate", width=15, font=("Helvetica", 20, "bold"), command=execModular)
         buttonCalc_Modular.grid(row=3, column=8, columnspan=2, rowspan=3)
@@ -1165,51 +1022,7 @@ class Midpoint(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
-        tk.ttk.Separator(self, orient="vertical").grid(column=1, row=0, rowspan=900, sticky='ns')
-
-        label = tk.Label(self, text="CS 208 PROJECT - Midpoint Circle Generation", font=controller.title_font)
-        label.grid(row=0, column=2, pady=10, padx=10, columnspan=20, sticky="w")
-
-        label_subtitle_1 = tk.Label(self, text="--------Main Page--------", font=("Times New Roman", 18))
-        label_subtitle_1.grid(row=3, column=0, pady=5, rowspan=2)
-
-        button1 = tk.Button(self, text="Main Page", command=lambda: controller.show_frame("StartUp"), width=19,
-                            height=2)
-        button1.grid(row=5, column=0, padx=5, pady=5, rowspan=2)
-
-        label_subtitle_2 = tk.Label(self, text="-----Line Generation-----", font=("Times New Roman", 18))
-        label_subtitle_2.grid(row=7, column=0, pady=20, rowspan=2)
-
-        button2 = tk.Button(self, text="Bressenham Algorithm", command=lambda: controller.show_frame("Bressenham"), width=19, height=2)
-        button2.grid(row=9, column=0, pady=5, rowspan=2)
-
-        button3 = tk.Button(self, text="DDA Algorithm", command=lambda: controller.show_frame("DDA"), width=19,
-                            height=2)
-        button3.grid(row=11, column=0, pady=5, rowspan=2)
-
-        label_subtitle_3 = tk.Label(self, text="----Circle Generation----", font=("Times New Roman", 18))
-        label_subtitle_3.grid(row=13, column=0, pady=20, rowspan=2)
-
-        button4 = tk.Button(self, text="Midpoint Algorithm", width=19, height=2)
-        button4.grid(row=15, column=0, pady=5, rowspan=2)
-
-        button5 = tk.Button(self, text="Modular Algorithm", command=lambda: controller.show_frame("Modular"), width=19,
-                            height=2)
-        button5.grid(row=17, column=0, pady=5, rowspan=2)
-
-        label_subtitle_4 = tk.Label(self, text="-----------About-----------", font=("Times New Roman", 18))
-        label_subtitle_4.grid(row=19, column=0, pady=20, rowspan=2)
-
-        label_subtitle_4_body = tk.Label(self,
-                                         text="Project created by Lyle Steven R. Biscocho and Gabriel Hansley C. Suarez in partial fulfillment of CS 208",
-                                         wraplength=220)
-        label_subtitle_4_body.grid(row=21, column=0, pady=5)
-
-        label_footer = tk.Label(self, text="              ", font=("Helvetica", 18))
-        label_footer.grid(row=22, column=2, pady=5)
-
-        label_footer2 = tk.Label(self, text="              ", font=("Helvetica", 18))
-        label_footer2.grid(row=23, column=2, pady=5)
+        Layout(self, controller, "CS 208 PROJECT - Midpoint Circle Generation")
 
         label_coordinates_Mid = tk.Label(self, text="Center >")
         label_Pointa_Mid = tk.Label(self, text=" X ")
@@ -1382,15 +1195,6 @@ class Midpoint(tk.Frame):
                 scroll1.pack(side=RIGHT, fill=Y)
                 scroll1.config(command=listbox_points.yview)
 
-            def scatterPlot():
-                f = Figure(figsize=(5, 5), dpi=100)
-                a = f.add_subplot(111)
-                a.scatter(finalX, finalY)
-
-                canvas = FigureCanvasTkAgg(f, self)
-                canvas.draw()
-                canvas.get_tk_widget().grid(row=8, column=5, rowspan=100, columnspan=100, sticky="nw")
-
             def main():
                 cont = True
                 iterCnt = 0
@@ -1424,12 +1228,13 @@ class Midpoint(tk.Frame):
             Ro = Decimal((5 / 4) - radius).quantize(Decimal('.01'), rounding=ROUND_HALF_UP)
             initX = 0
             initY = radius
+
             main()
             actual()
             getPoints()
             displayPoints()
             displayValues()
-            scatterPlot()
+            showPlot(finalX, finalY, self, 8, 5)
 
         buttonCalc_Mid = tk.Button(self, text="Calculate", width=15, font=("Helvetica", 20, "bold"), command=execMid)
         buttonCalc_Mid.grid(row=3, column=8, columnspan=2, rowspan=3)
