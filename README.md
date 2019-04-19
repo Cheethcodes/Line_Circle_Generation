@@ -1,15 +1,16 @@
 # Line_Circle_Generation_Algorithm  
 Basic line and circle generating algorithm are included.  
-Line Generation Algorithm:  
-     DDA  
-     Bressenham  
-Circle Generation Algorithm:  
-     Modular  
-     Midpoint  
+&nbsp;&nbsp;Line Generation Algorithm:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DDA  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bressenham  
+&nbsp;&nbsp;Circle Generation Algorithm:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Modular  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Midpoint  
+  
   
 Contributors:  
- Lyle Steven R. Biscocho  
- Gabriel Hansley C. Suarez  
+&nbsp;&nbsp;Lyle Steven R. Biscocho  
+&nbsp;&nbsp;Gabriel Hansley C. Suarez  
   
 Credits:  
- Christopher John V. Hispano
+&nbsp;&nbsp;Christopher John V. Hispano
