@@ -1,9 +1,11 @@
 # Line_Circle_Generation_Algorithm  
 The project is a program for generating a line or circle based on specific algorithms listed below:
 ## Line Generation Algorithm:  
-### &nbsp;&nbsp;&nbsp;DDA and Bressenham  
+* DDA  
+* Bressenham  
 ## Circle Generation Algorithm:  
-### &nbsp;&nbsp;&nbsp;Modular and Midpoint  
+* Modular  
+* Midpoint  
   
   
 ## Contributors:  
