@@ -9,8 +9,8 @@ The project is a program for generating a line or circle based on specific algor
   
   
 ## Contributors:  
-&nbsp;&nbsp;*Lyle Steven R. Biscocho  
-&nbsp;&nbsp;*Gabriel Hansley C. Suarez  
+*Lyle Steven R. Biscocho  
+*Gabriel Hansley C. Suarez  
   
 ## Credits:  
-&nbsp;&nbsp;*Christopher John V. Hispano
+*Christopher John V. Hispano
